@@ -40,7 +40,7 @@ A,ani-cli
 ,groff
 ,gtk2
 ,gzip
-,htop
+A,htop-vim
 ,imagemagick
 ,imlib2
 ,keepassxc
