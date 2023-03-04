@@ -37,6 +37,7 @@ A,ani-cli
 ,gnome-themes-extra
 ,gnuplot
 ,grep
+,ripgrep
 ,groff
 ,gtk2
 ,gzip
@@ -148,3 +149,7 @@ A,bicon-git
 ,bluez-utils
 ,bluez-runit
 ,xcompmgr
+G,https://github.com/lukesmithxyz/dmenu.git
+G,https://github.com/iStagnant/dwm.git
+G,https://github.com/iStagnant/dwmblocks.git
+G,https://github.com/iStagnant/st.git
