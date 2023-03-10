@@ -283,7 +283,8 @@ mkdir -p /etc/sysctl.d
 echo "kernel.dmesg_restrict = 0" > /etc/sysctl.d/dmesg.conf
 
 # Generating completion script for mangal
-mangal completion zsh > /usr/share/zsh/site-functions/_mangal
+sudo -u "$name" mkdir -p /usr/local/share/zsh/site-functions/
+mangal completion zsh > /usr/local/share/zsh/site-functions/_mangal
 
 # Making dash sh
 ln -sf /bin/dash /bin/sh
