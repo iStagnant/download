@@ -120,7 +120,7 @@ manualinstall() {
 
 maininstall() {
 	# Installs all needed programs from main repo.
-	whiptail --title "iStagnant's rice Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 9 70
+	whiptail --title "iStagnant's rice Installation" --infobox "Installing \`$1\` ($n of $total)." 9 70
 	installpkg "$1"
 }
 
@@ -129,7 +129,7 @@ gitmakeinstall() {
 	progname="${progname%.git}"
 	dir="$repodir/$progname"
 	whiptail --title "iStagnant's rice Installation" \
-		--infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 8 70
+		--infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`." 8 70
 	sudo -u "$name" git -C "$repodir" clone --depth 1 --single-branch \
 		--no-tags -q "$1" "$dir" ||
 		{
@@ -144,14 +144,14 @@ gitmakeinstall() {
 
 aurinstall() {
 	whiptail --title "iStagnant's rice Installation" \
-		--infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 9 70
+		--infobox "Installing \`$1\` ($n of $total) from the AUR." 9 70
 	echo "$aurinstalled" | grep -q "^$1$" && return 1
 	sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
 }
 
 pipinstall() {
 	whiptail --title "iStagnant's rice Installation" \
-		--infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 9 70
+		--infobox "Installing the Python package \`$1\` ($n of $total)." 9 70
 	[ -x "$(command -v "pip")" ] || installpkg python-pip >/dev/null 2>&1
 	yes | pip install "$1"
 }
@@ -301,15 +301,15 @@ echo "[core]
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    line-numbers = true
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	line-numbers = true
 
 [merge]
-    conflictstyle = diff3
+	conflictstyle = diff3
 
 [diff]
-    colorMoved = default
+	colorMoved = default
 " >> /home/$name/.config/git/config
 
 # Clonning my dotfiles repo as a bare repo
