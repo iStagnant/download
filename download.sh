@@ -290,8 +290,9 @@ mangal completion zsh > /usr/local/share/zsh/site-functions/_mangal
 ln -sf /bin/dash /bin/sh
 
 # Making neomutt work with my abook configuration
-echo "set query_command = \"abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --mutt-query '%s'\"" >> /home/$name/.config/mutt/muttrc
-echo "macro index,pager a \"<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>\" \"add the sender address to abook\"" >> /home/$name/.config/mutt/muttrc
+echo "\n# -------------------------- abook ---------------------------
+set query_command = \"abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --mutt-query '%s'\" 
+macro index,pager a \"<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>\" \"add the sender address to abook\"" >> /home/$name/.config/mutt/muttrc
 
 # Making delta the git page
 echo "[core]
