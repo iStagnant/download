@@ -292,7 +292,14 @@ ln -sf /bin/dash /bin/sh
 # Making neomutt work with my abook configuration
 echo "\n# -------------------------- abook ---------------------------
 set query_command = \"abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --mutt-query '%s'\" 
-macro index,pager a \"<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>\" \"add the sender address to abook\"" >> /home/$name/.config/mutt/muttrc
+macro index,pager a \"<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --config ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>\" \"add the sender address to abook\"
+\n# -------------------------- theme ---------------------------
+# basic space_chalk color scheme
+source ~/.config/mutt/themes/spacechalk_colors.muttrc
+
+# powerline for status lines and pager lines
+source ~/.config/mutt/themes/powerline.neomuttrc
+" >> /home/$name/.config/mutt/muttrc
 
 # Making delta the git page
 echo "[core]
