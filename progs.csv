@@ -92,7 +92,7 @@ A,pam-gnupg
 ,sed
 A,simple-mtpfs
 ,simple-scan
-,sxiv
+,nsxiv
 ,syncthing
 ,syncthing-runit
 A,task-spooler
@@ -141,7 +141,6 @@ A,zsh-fast-syntax-highlighting-git
 A,tllocalmgr
 A,mangal
 ,git-delta
-,moreutils
 ,ttf-dejavu
 A,bicon-git
 ,bluez

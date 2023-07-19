@@ -321,7 +321,7 @@ echo "[core]
 " >> /home/$name/.config/git/config
 
 # Clonning my dotfiles repo as a bare repo
-git clone $dotfilesrepo /home/$name/.local/share/dotfiles
+git clone --bare $dotfilesrepo /home/$name/.local/share/dotfiles
 
 # Last message! Install complete!
 finalize
