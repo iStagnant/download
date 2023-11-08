@@ -282,10 +282,6 @@ echo "Defaults editor=/usr/bin/nvim" >/etc/sudoers.d/02-visudo-editor
 mkdir -p /etc/sysctl.d
 echo "kernel.dmesg_restrict = 0" > /etc/sysctl.d/dmesg.conf
 
-# Generating completion script for mangal
-sudo -u "$name" mkdir -p /usr/local/share/zsh/site-functions/
-mangal completion zsh > /usr/local/share/zsh/site-functions/_mangal
-
 # Making dash sh
 ln -sf /bin/dash /bin/sh
 
